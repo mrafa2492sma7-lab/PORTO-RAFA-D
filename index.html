@@ -1,0 +1,335 @@
+Kalau kamu butuh **1 file HTML lengkap** (CSS sudah di dalamnya), berikut template portofolio hitam-putih modern dengan:
+
+* ✅ Foto profil bulat
+* ✅ Efek glow putih
+* ✅ Animasi floating
+* ✅ Typing animation nama
+* ✅ Background elegan
+* ✅ Skill bar
+* ✅ Tentang Saya
+* ✅ Riwayat Pendidikan
+* ✅ Proyek
+* ✅ Kontak
+* ✅ Hover effect
+* ✅ Tampilan developer profesional
+
+> Ganti `foto.jpg` dengan foto kamu.
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Muhammad Rafa Dewanto</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#000,#111,#000);
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:50px 50px;
+    opacity:0.08;
+    animation:stars 25s linear infinite;
+    z-index:-1;
+}
+
+@keyframes stars{
+    from{transform:translateY(0);}
+    to{transform:translateY(-500px);}
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.hero{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    box-shadow:
+    0 0 20px white,
+    0 0 50px rgba(255,255,255,.5);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+.typing{
+    margin:25px auto;
+    font-size:42px;
+    font-weight:bold;
+    overflow:hidden;
+    white-space:nowrap;
+    border-right:3px solid white;
+    width:0;
+    animation:
+    typing 3s steps(25,end) forwards,
+    blink .8s infinite;
+}
+
+@keyframes typing{
+    from{width:0;}
+    to{width:100%;}
+}
+
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+
+.subtitle{
+    color:#bdbdbd;
+    margin-top:10px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;
+    padding:25px;
+    margin:20px 0;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+.section-title{
+    font-size:28px;
+    margin-bottom:15px;
+    border-left:5px solid white;
+    padding-left:10px;
+}
+
+.skill{
+    margin:15px 0;
+}
+
+.skill p{
+    margin-bottom:5px;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    background:#222;
+    border-radius:20px;
+}
+
+.fill{
+    height:100%;
+    background:white;
+    border-radius:20px;
+}
+
+.html{width:90%;}
+.css{width:85%;}
+.python{width:80%;}
+.problem{width:88%;}
+
+.project{
+    padding:15px;
+    margin-top:10px;
+    background:rgba(255,255,255,.03);
+    border-radius:15px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    border:2px solid white;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+    box-shadow:0 0 20px white;
+}
+
+footer{
+    text-align:center;
+    color:#888;
+    padding:40px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <section class="hero">
+
+        <img src="foto.jpg" class="profile">
+
+        <h1 class="typing">
+            Muhammad Rafa Dewanto
+        </h1>
+
+        <p class="subtitle">
+            Student • Future Software Developer
+        </p>
+
+        <a href="#kontak" class="btn">
+            Contact Me
+        </a>
+
+    </section>
+
+    <div class="card">
+        <h2 class="section-title">Tentang Saya</h2>
+
+        <p>
+            Saya adalah siswa SMA Prestasi Prima yang memiliki minat
+            dalam bidang teknologi, pemrograman, dan pengembangan website.
+            Saya senang mempelajari HTML, CSS, dan Python untuk membuat
+            berbagai proyek digital yang menarik dan bermanfaat.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2 class="section-title">Data Diri</h2>
+
+        <p><b>Nama :</b> Muhammad Rafa Dewanto</p>
+        <p><b>Umur :</b> 16 Tahun</p>
+        <p><b>Sekolah :</b> SMA Prestasi Prima</p>
+        <p><b>Status :</b> Pelajar</p>
+    </div>
+
+    <div class="card">
+        <h2 class="section-title">Keahlian</h2>
+
+        <div class="skill">
+            <p>HTML</p>
+            <div class="bar">
+                <div class="fill html"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>CSS</p>
+            <div class="bar">
+                <div class="fill css"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Python</p>
+            <div class="bar">
+                <div class="fill python"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <p>Problem Solving</p>
+            <div class="bar">
+                <div class="fill problem"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="section-title">Riwayat Pendidikan</h2>
+
+        <p>📚 MI Al Ikhlas</p>
+        <br>
+        <p>📚 SMP Negeri 81</p>
+        <br>
+        <p>📚 SMA Prestasi Prima</p>
+    </div>
+
+    <div class="card">
+        <h2 class="section-title">Proyek</h2>
+
+        <div class="project">
+            💻 Website Portofolio Pribadi
+        </div>
+
+        <div class="project">
+            🐍 Program Kalkulator Python
+        </div>
+
+        <div class="project">
+            🎨 Turtle Graphics Python
+        </div>
+
+        <div class="project">
+            📊 Sistem Pengolahan Data Sederhana
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h2 class="section-title">Prestasi</h2>
+
+        <p>🏆 Menyelesaikan berbagai proyek pemrograman Python.</p>
+        <br>
+        <p>🏆 Membuat website portofolio modern menggunakan HTML & CSS.</p>
+        <br>
+        <p>🏆 Aktif mempelajari teknologi dan pemrograman secara mandiri.</p>
+    </div>
+
+    <div class="card" id="kontak">
+        <h2 class="section-title">Kontak</h2>
+
+        <p>📧 muhammadrafa@example.com</p>
+        <br>
+        <p>📍 Jakarta, Indonesia</p>
+    </div>
+
+    <footer>
+        © 2026 Muhammad Rafa Dewanto | Portfolio Website
+    </footer>
+
+</div>
+
+</body>
+</html>
+```
+
+Template ini sudah cukup untuk tugas sekolah dan terlihat jauh lebih profesional dibanding portofolio HTML dasar.
